@@ -20,10 +20,4 @@ public class TransactionCreate implements UseCase {
     private TransactionType transactionType;
     private BigDecimal amount;
     private String description;
-
-    public boolean isAmountInvalid() {
-        return amount.compareTo(BigDecimal.ZERO) <= 0;
-    }
-
-
 }
