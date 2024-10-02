@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.Month;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,12 +28,12 @@ public class AccountRetrieveTest {
                 .customerId("costumer id")
                 .build();
 
-        var account = accountRetrieveUseCaseHandler.handle( accountRetrieve);
+        var account = accountRetrieveUseCaseHandler.handle(accountRetrieve);
 
-        assertThat(account).isNotNull();
         assertThat(account).isNotNull();
         assertThat(account.getAccountNumber()).isEqualTo("account number");
+        assertThat(account.getCustomerId()).isEqualTo("costumer id");
         assertThat(account.getBalance()).isEqualTo(new BigDecimal(1000));
-
+        assertThat(account.getCreatedAt()).isEqualTo(LocalDateTime.of(2002, Month.DECEMBER, 15, 0, 0));
     }
 }

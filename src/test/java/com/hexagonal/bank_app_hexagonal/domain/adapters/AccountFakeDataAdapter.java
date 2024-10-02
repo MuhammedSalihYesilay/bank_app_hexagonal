@@ -50,7 +50,7 @@ public class AccountFakeDataAdapter implements AccountPort {
         return List.of(
                 Account.builder()
                         .id("1")
-                        .customerId("costumer id")
+                        .customerId("costumer id1")
                         .accountNumber("account number")
                         .balance(new BigDecimal("100.00"))
                         .createdAt(LocalDateTime.of(2002, Month.DECEMBER, 15, 0, 0))

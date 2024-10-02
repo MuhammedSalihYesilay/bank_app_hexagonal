@@ -19,5 +19,4 @@ public class AccountDeleteUseCaseHandler implements VoidUseCaseHandler<AccountDe
     public void handle(AccountDelete useCase) {
         accountPort.delete(useCase.getAccountId(), useCase.getCustomerId());
     }
-
 }
